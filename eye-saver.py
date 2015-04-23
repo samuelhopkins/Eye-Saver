@@ -3,13 +3,14 @@ import sys
 import subprocess
 import datetime
 import time
+import logging
 from apscheduler.scheduler import Scheduler
 
 sched = Scheduler()
 sched.daemonic = False
 sched.start()
 
-
+logging.basicConfig()
 
 def save():
 	subprocess.call("./save-my-eyes.sh", shell=True)
